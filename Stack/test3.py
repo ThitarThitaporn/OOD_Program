@@ -5,3 +5,7 @@ class Stack :
             self.items = []
         else:
             self.item = list
+
+
+ elif(int(S.peek())%2==0 ):
+        st.push(int(S.pop())-1)
