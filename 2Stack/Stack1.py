@@ -14,9 +14,8 @@ class Stack():
         
     def push(self,num):
         self.items.append(int(num))
-        self.items.sort()
         self.size = len(self.items)
-        return f'Add = {num} and Size = {self.size} '
+        return f'Add = {num} and Size = {self.size}'
     
     def pop(self):
         self.size = len(self.items)-(1)
@@ -32,7 +31,6 @@ S = input("Enter Input : ").split(',')
 for i in range(len(S)):
     try:
         key, num = S[i].split()
-        #print(key,num)
     except:
         key = S[i][0]
     if key == 'A':

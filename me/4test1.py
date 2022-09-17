@@ -56,6 +56,8 @@ if a.isEmpty():
     print("List is empty")
 else:
     print("link list : "+a.__str__())
+
+
 for i in inp[1:]:
     index,data = [int(j)for j in i.split(":")]
     if index<0 or index>a.size:
@@ -65,3 +67,17 @@ for i in inp[1:]:
         print("index = "+str(index)+" and data = "+str(data))
     if a.isEmpty():print("List is empty")
     else:print("link list : "+a.__str__())
+
+#----------------
+
+for i in inp[1:]:
+    index,data = [int(j)for j in i.split(":")]
+    if index < 0 or index > lli.size:
+        print("Data cannot be added")
+    else:
+        lli.insert(index,data)
+        print("index = "+str(index)+" and data = "+str(data))
+    if lli.isEmpty():
+        print("List is empty")
+    else:
+        print("link list : "+lli.__str__())

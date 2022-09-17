@@ -4,7 +4,7 @@ class Node:
         self.next = None
         self.prev = None
 
-class DoublyLinkedList:     
+class DoublyLinkedlist:     
     def __init__(self):
         self.head=None
         self.tail=None
@@ -108,7 +108,7 @@ class DoublyLinkedList:
 
 inp = input('Enter Input : ')
 inp=inp.replace(', ',',').split(',')
-DL=DoublyLinkedList()
+DL=DoublyLinkedlist()
 
 for i in inp:
     i = i.split()
@@ -116,10 +116,12 @@ for i in inp:
         DL.append(i[1])
         print(f"linked list : {DL}")
         print(f"reverse : {DL.str_reverse()}")
+
     elif i[0] == 'Ab':
         DL.insert(0, i[1])
         print(f"linked list : {DL}")
         print(f"reverse : {DL.str_reverse()}")
+        
     elif i[0] == 'I':
         ele = i[1].split(':')
         if int(ele[0])<0 or int(ele[0])>DL.size:
@@ -129,11 +131,8 @@ for i in inp:
             print(f"index = {ele[0]} and data = {ele[1]}")
         print(f"linked list : {DL}")
         print(f"reverse : {DL.str_reverse()}")   
-    elif i[0] == 'R':
-        # a คือ node ตัวที่เอาออกไป ข้างในมีตน+index 
-        # a[0] = ตำแหน่งที่เก็บ + a[0].data = ตัวเลข , a[1] = index 
 
-        # ไปหาเลขใน DL อีกทีนึง
+    elif i[0] == 'R':
         a = DL.remove(i[1])
         if a[0] == None:
              print("Not Found!")

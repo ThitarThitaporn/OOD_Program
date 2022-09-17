@@ -32,5 +32,5 @@ def postFixeval(st):
     return s.pop()
 
 print(" ***Postfix expression calcuation***")
-token = list(input("Enter Postfix expression : ").split())
+token = (input("Enter Postfix expression : ").split())
 print("Answer : ",'{:.2f}'.format(postFixeval(token)))
