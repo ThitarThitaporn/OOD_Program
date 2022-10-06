@@ -3,40 +3,40 @@ class Node:
         self.data = data
         self.next = None
 
-class LinkedList:
-    def __init__(self): #สร้างll
-        self.head = None
+class SingyLinkedlist:
+    def __init__ (self):
+        self.head =None
         self.size = 0
 
     def __str__(self):
         s = ""
         t = self.head
-        while t !=None:
-            s+=str(t.data)
-            t=t.next
-            if t !=None: 
-                s+="->"
+        while t != None:
+            s += str(t.data)
+            t = t.next
+            if t != None:
+                s += "->"
         return s
 
     def isEmpty(self):
         return self.head == None
 
-    def append(self,data): #เพิ่ม data ต่อท้าย linked list
+    def append(self,data):
         p = Node(data)
-        if self.isEmpty():
+        if self.isEmpty(): #ถ้าว่างให้ใส่ก้อนโนดไปเลย
             self.head = p
-        else:
+        else: #ถ้าไม่ให้เช็คไปเรื่อยๆ
             t = self.head
-            while t.next != None:
-                t=t.next
+            while t.next != None : #ไม่ว่าง
+                t = t.next
             t.next = p
         self.size+=1
-
-    def insert(self,index,data):#ใช้สำหรับการแทรก | index คือ position
+        
+    def insert(self,index,data): #ใช้สำหรับการแทรก | index คือ position
         p = Node(data)
-        if self.isEmpty():
+        if self.isEmpty() :
             self.head = p
-        elif index == 0:
+        elif index == 0 :
             p.next = self.head
             self.head = p
         else:
@@ -49,9 +49,10 @@ class LinkedList:
             t.next = p
         self.size +=1
 
-inp = input("Enter Input : ").split(',')
+inp = input("Enter input : ").split(',')
 l = inp[0].split()
-lli = LinkedList()
+lli = SingyLinkedlist()
+
 for i in l:lli.append(int(i))
 if lli.isEmpty():
     print("List is empty")

@@ -4,35 +4,35 @@ class Node:
         self.next = None
 
 class LinkedList:
-    def __init__(self): #สร้างll
+    def __init__(self):
         self.head = None
         self.size = 0
 
     def __str__(self):
-        s = ""
+        s=''
         t = self.head
-        while t !=None:
-            s+=str(t.data)
-            t=t.next
-            if t !=None: 
-                s+="->"
+        while t != None:
+            s+= str(t.data)
+            t =t.next 
+            if t!= None:
+                s+='->'
         return s
 
     def isEmpty(self):
         return self.head == None
 
-    def append(self,data): #เพิ่ม data ต่อท้าย linked list
+    def append(self,data):
         p = Node(data)
         if self.isEmpty():
             self.head = p
         else:
             t = self.head
-            while t.next != None:
-                t=t.next
+            while t.next!= None:
+                t = t.next 
             t.next = p
-        self.size+=1
-
-    def insert(self,index,data):#ใช้สำหรับการแทรก | index คือ position
+        self.size += 1
+    
+    def insert(self,data,index):
         p = Node(data)
         if self.isEmpty():
             self.head = p
@@ -43,8 +43,8 @@ class LinkedList:
             t = self.head
             i = 0
             while i < index-1:
-                i+=1 
-                t=t.next
+                i+=1
+                t = t.next
             p.next = t.next
             t.next = p
         self.size +=1

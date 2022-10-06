@@ -3,55 +3,58 @@ class Node:
         self.data = data
         self.next = None
 
-class LinkedList:
-    def __init__(self): #สร้างll
+class Linkedlist:
+    def __init__(self):
         self.head = None
         self.size = 0
 
     def __str__(self):
-        s = ""
+        s=""
         t = self.head
-        while t !=None:
+        while t != None:
             s+=str(t.data)
-            t=t.next
-            if t !=None: 
+            t = t.next
+            if t != None:
                 s+="->"
         return s
 
     def isEmpty(self):
-        return self.head == None
-
-    def append(self,data): #เพิ่ม data ต่อท้าย linked list
+        return self.head == None #อย่าลืมใส่ return
+    
+    def append(self,data):
         p = Node(data)
         if self.isEmpty():
             self.head = p
+
         else:
             t = self.head
-            while t.next != None:
-                t=t.next
+            while t.next != None: #ผิดบ่อยที่ t.next
+                t =t.next
             t.next = p
-        self.size+=1
+        self.size += 1
+        
 
-    def insert(self,index,data):#ใช้สำหรับการแทรก | index คือ position
+    def insert(self,index,data):
         p = Node(data)
         if self.isEmpty():
             self.head = p
         elif index == 0:
             p.next = self.head
             self.head = p
-        else:
+        else :
             t = self.head
             i = 0
             while i < index-1:
-                i+=1 
-                t=t.next
+                i+=1
+                t = t.next
             p.next = t.next
             t.next = p
         self.size +=1
 
+    
 inp = input("Enter Input : ").split(',')
 l = inp[0].split()
-lli = LinkedList()
+lli = Linkedlist()
 for i in l:lli.append(int(i))
 if lli.isEmpty():
     print("List is empty")
